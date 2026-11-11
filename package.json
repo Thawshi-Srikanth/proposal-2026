@@ -9,7 +9,10 @@
     "preview": "vite preview --host 0.0.0.0",
     "start": "node server/index.mjs",
     "test:telegram": "node --test server/telegram.test.mjs",
-    "telegram:chats": "node server/list-chats.mjs"
+    "telegram:chats": "node server/list-chats.mjs",
+    "test:story": "node --test src/story.test.mjs",
+    "test": "node --test src/story.test.mjs src/story-source.test.mjs server/telegram.test.mjs",
+    "test:original-story": "node --test src/story-source.test.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",
