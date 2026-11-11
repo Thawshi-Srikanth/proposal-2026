@@ -1,0 +1,4 @@
+try{process.loadEnvFile('.env.local')}catch{}
+const token=process.env.TELEGRAM_BOT_TOKEN;
+if(!token){console.error('Add TELEGRAM_BOT_TOKEN to .env.local first.');process.exit(1)}
+try{const response=await fetch(`https://api.telegram.org/bot${token}/getUpdates`,{signal:AbortSignal.timeout(10000)});const result=await response.json();if(!result.ok)throw Error();const chats=new Map();for(const update of result.result){const chat=update.message?.chat||update.channel_post?.chat;if(chat)chats.set(chat.id,chat.title||chat.first_name||chat.type)}if(!chats.size)console.log('Send /start to your bot in Telegram, then run this command again.');else for(const [id,name]of chats)console.log(`${id} — ${name}`)}catch{console.error('Could not read bot chats. Check the bot token and network connection.');process.exitCode=1}

@@ -1,0 +1,1 @@
+pesamale.mp3 is the background track. Playback is attempted on load and retried on completed swipes, button clicks, taps and keyboard events. The pause button is respected across page turns. Volume starts at 32%; the track loops.

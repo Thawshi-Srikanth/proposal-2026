@@ -1,0 +1,21 @@
+{
+  "name": "letters-to-kanmani",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "start": "node server/index.mjs",
+    "test:telegram": "node --test server/telegram.test.mjs",
+    "telegram:chats": "node server/list-chats.mjs"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "^6.1.0",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {}
+}
